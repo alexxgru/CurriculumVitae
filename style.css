@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&family=Roboto+Slab:wght@200&display=swap');
+
+
+
+/* Standards */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1b1b1b;
+    font-family: 'PT Serif', serif;
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding-top: 7em;
+}
+
+h1 {
+    color: #34bfff;
+    width: 10em;
+    font-size: 40px;
+    font-weight: 100;
+    margin: auto;
+    padding-bottom: 10px;
+    border-bottom: white 1px solid;
+}
+
+h2 {
+    margin-top: 1em;
+    font-size: 70px;
+    font-weight: 500;
+    text-shadow: #343434;
+}
+
+h3 {
+    color: #34bfff;
+}
+
+p {
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+}
+
+ul {
+    
+    list-style: none;
+    margin: 4em auto;
+    display: flex;
+    flex: row;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    color: #34bfff;
+}
+
+
+
+
+/* ---------------------------------------------
+-------------------------------------------------
+---------------------------------------------------*/
+
+
+
+
+#top {
+    margin-top: 0;
+    height: 100vh;
+    background-image: url("./imgs/background2.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#top-container {
+    background-color: rgb(52, 52, 52, 0.3);
+    max-width: 550px;
+    width: 100%;
+    margin: auto;
+    border-radius: 1em;
+}
+
+header p {
+    margin-top: 2em;
+    font-family: 'Roboto Slab', serif;
+    font-size: 30px;
+}
+
+#socials li {
+    width: 50px;
+    margin: 1em;
+    opacity: 0.4;
+    transition: opacity 200ms ease;
+}
+#lia {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+ul li img {
+    width: 100%;
+}
+
+#socials li:hover {
+    opacity: 1.0;
+}
+
+
+/* --------------------------------------------- */
+
+
+#about {
+    height: 100vh;
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template: "a a" " b c" "d e" / 1fr 1fr;
+}
+
+/*
+Grid
+*/
+
+#about-lia{ grid-area: b;}
+#skills {grid-area: c;}
+#learning {grid-area: d;}
+#projects {grid-area: e;}
+
+
+
+#introduction h2 {
+    text-align: center;
+    color: #34bfff;
+    font-weight: 700;
+    font-size: 40px;
+    padding-top: 1em;
+}
+
+#selfie {
+    width: 120px;
+    height: 120px;
+    background-color: black;
+    border-radius: 120px;
+}
+
+#about > section {
+    margin: auto;
+    background-color: #1b1b1b;
+    border-radius: 1em;
+    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+}
+
+#introduction {
+    width: 100%;
+    grid-area: a;
+}
+
+#introduction p {
+    font-size: 20px;
+}
+
+#intro-container {
+    margin: 3em auto;
+    padding-bottom: 3em;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap: 3em;
+}
+
