@@ -13,6 +13,9 @@ body {
     background-color: #1b1b1b;
     font-family: 'PT Serif', serif;
     color: white;
+    background-image: url("./imgs/background2.jpg");
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 header {
@@ -27,7 +30,8 @@ h1 {
     font-weight: 100;
     margin: auto;
     padding-bottom: 10px;
-    border-bottom: white 1px solid;
+    position: relative;
+    display: inline-block;
 }
 
 h2 {
@@ -39,6 +43,8 @@ h2 {
 
 h3 {
     color: #34bfff;
+    margin-left: 2em;
+    padding-top: 1em;
 }
 
 p {
@@ -47,11 +53,11 @@ p {
 }
 
 ul {
-    
+
     list-style: none;
     margin: 4em auto;
     display: flex;
-    flex: row;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
@@ -60,6 +66,28 @@ a {
     color: #34bfff;
 }
 
+
+/* Animation header border */
+
+#name::before {
+    content: "";
+    position: absolute;
+}
+
+h1::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 1s ease;
+}
+
+.animate-border::before {
+    width: 100%;
+}
 
 
 
@@ -71,11 +99,7 @@ a {
 
 
 #top {
-    margin-top: 0;
     height: 100vh;
-    background-image: url("./imgs/background2.jpg");
-    background-size: cover;
-    background-attachment: fixed;
 }
 
 #top-container {
@@ -92,12 +116,18 @@ header p {
     font-size: 30px;
 }
 
+#socials {
+    opacity: 0.0;
+    transition: opacity 400ms ease;
+}
+
 #socials li {
     width: 50px;
     margin: 1em;
     opacity: 0.4;
-    transition: opacity 200ms ease;
+    transition: opacity 200ms ease, visibility 200ms ease;
 }
+
 #lia {
     margin-top: 0;
     font-size: 20px;
@@ -111,28 +141,48 @@ ul li img {
     opacity: 1.0;
 }
 
+.visible {
+    opacity: 1.0 !important;
+}
+
 
 /* --------------------------------------------- */
 
 
 #about {
-    height: 100vh;
-    width: 80%;
+    background-color: #343434;
+    width: 100%;
     margin: auto;
     display: grid;
     grid-template: "a a" " b c" "d e" / 1fr 1fr;
+    justify-content: space-evenly;
+    gap: 2em;
+    padding: 4em;
 }
 
 /*
 Grid
 */
 
-#about-lia{ grid-area: b;}
-#skills {grid-area: c;}
-#learning {grid-area: d;}
-#projects {grid-area: e;}
+#about-lia {
+    grid-area: b;
+}
 
+#skills {
+    grid-area: c;
+}
 
+#learning {
+    grid-area: d;
+}
+
+#projects {
+    grid-area: e;
+}
+
+#about section>* {
+    margin-left: 2em;
+}
 
 #introduction h2 {
     text-align: center;
@@ -149,28 +199,98 @@ Grid
     border-radius: 120px;
 }
 
-#about > section {
+#about>section,
+#introduction {
     margin: auto;
     background-color: #1b1b1b;
     border-radius: 1em;
     box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+    padding: 10px 20px;
+    margin: auto;
 }
 
 #introduction {
-    width: 100%;
+    width: 90%;
     grid-area: a;
 }
 
-#introduction p {
+#about p, #about li {
     font-size: 20px;
+}
+
+#about section {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    height: 290px;
+    width: 100%;
 }
 
 #intro-container {
     margin: 3em auto;
+    margin-bottom: 0;
     padding-bottom: 3em;
+    max-width: 100%;
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     gap: 3em;
 }
 
+#skills ul {
+    display: grid;
+    width: 90%;
+    grid-template: "a b c d e " "f g h i j" / 1fr 1fr 1fr 1fr 1fr;
+    margin: 1em auto;
+}
+
+#skills ul li {
+    display: flex;
+    justify-content: center;
+    width: 73px;
+    height: 73px;
+    margin: 0.5rem;
+    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+    background-color: #212529;
+    border-radius: 10px;
+}
+
+#skills img {
+    height: 50%;
+    width: 50%;
+    object-fit: contain;
+    margin: auto 0;
+}
+
+#about-lia a {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    padding: 1em;
+    background-color: #1c1e22;
+    width: 8em;
+}
+
+
+#projects ul,
+#learning ul {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    list-style: disc;
+    justify-content: left;
+    margin: 0;
+    margin-left: 4em;
+    gap: 10px;
+    padding-bottom: 1em;
+}
+
+
+/* ---------------------------------------------
+-------------------------------------------
+---------------------------------------------*/
+
+#experience {
+    height: 100vh;
+}
