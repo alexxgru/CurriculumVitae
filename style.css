@@ -13,9 +13,6 @@ body {
     background-color: #1b1b1b;
     font-family: 'PT Serif', serif;
     color: white;
-    background-image: url("./imgs/background2.jpg");
-    background-size: cover;
-    background-attachment: fixed;
 }
 
 header {
@@ -100,6 +97,9 @@ h1::before {
 
 #top {
     height: 100vh;
+    background-image: url("./imgs/background2.jpg");
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 #top-container {
@@ -150,12 +150,12 @@ ul li img {
 
 
 #about {
-    background-color: #343434;
-    width: 100%;
+    width: 80%;
     margin: auto;
     display: grid;
     grid-template: "a a" " b c" "d e" / 1fr 1fr;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
     gap: 2em;
     padding: 4em;
 }
@@ -199,8 +199,7 @@ Grid
     border-radius: 120px;
 }
 
-#about>section,
-#introduction {
+#about>section{
     margin: auto;
     background-color: #1b1b1b;
     border-radius: 1em;
@@ -210,7 +209,8 @@ Grid
 }
 
 #introduction {
-    width: 90%;
+    width: 100%;
+    margin: auto;
     grid-area: a;
 }
 
@@ -222,8 +222,9 @@ Grid
     display: flex;
     flex-direction: column;
     gap: 1em;
-    height: 290px;
+    min-height: 290px;
     width: 100%;
+    min-width: 480px;
 }
 
 #intro-container {
@@ -239,7 +240,7 @@ Grid
 
 #skills ul {
     display: grid;
-    width: 90%;
+    width: clamp(290px, 80%, 100%);
     grid-template: "a b c d e " "f g h i j" / 1fr 1fr 1fr 1fr 1fr;
     margin: 1em auto;
 }
