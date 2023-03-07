@@ -34,7 +34,7 @@ async function runAnimation() {
     let json = await response.json();
 
     await type(document.querySelector('h1'), json.title , true, 100);
-    await type(document.querySelector('#name'), json.name, false, 75);
+    await type(document.querySelector('#name'), json.name, false, 100);
     await type(document.querySelector('#presentation'), json.developer, false, 75);
     await type(document.querySelector('#lia'), json.lia, false, 75);
     setTimeout( () => {document.querySelector('#socials').classList.add('visible');}, 500)

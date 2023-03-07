@@ -43,6 +43,7 @@ h3 {
     margin: 0 2em;
     padding-top: 1em;
     padding-bottom: 10px;
+    font-size: 24px;
     border-bottom: 1px solid white;
 }
 
@@ -67,6 +68,8 @@ ul {
 
 a {
     color: #34bfff;
+    text-decoration: none;
+    position: relative;
 }
 
 
@@ -75,6 +78,21 @@ a {
 #name::before {
     content: "";
     position: absolute;
+}
+
+a.animate::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #34bfff;
+    transition: width 300ms ease;
+}
+
+a.animate:hover::before {
+    width: 100%;
 }
 
 h1::before {
@@ -155,7 +173,8 @@ ul li img {
 
 
 #about {
-    width: 80%;
+    width: 70%;
+    min-width: 1200px;
     margin: auto;
     display: grid;
     grid-template: "a a" " b c" "d e" / 1fr 1fr;
@@ -187,6 +206,10 @@ Grid
 
 #about section>* {
     margin-left: 2em;
+}
+
+#about h3 {
+    margin: 0 1em;
 }
 
 #introduction h2, #experience-container h2 {
@@ -325,7 +348,6 @@ Grid
     height: 100vh;
     margin: auto;
     padding-top: 3em;
-    border-radius: 3em;
 }
 
 #resume {
@@ -341,7 +363,7 @@ Grid
     text-align: left;
     align-items: center;
     padding: 1em;
-    margin: 2em 0 2em 2em;
+    margin: 2em 0 0 2em;
     list-style-type: disc;
 }
 
@@ -356,5 +378,18 @@ Grid
 
 #contact h2 {
     padding: 0;
+    margin-top: 1em;
+    padding-bottom: 1em;
     font-size: 30px;
+}
+
+#contactlist {
+    line-height: 2em;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 1em;
+    width: 18em;
+    margin: auto;
+    text-align: start;
 }
