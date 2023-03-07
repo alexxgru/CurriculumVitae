@@ -22,7 +22,7 @@ header {
 
 h1 {
     color: #34bfff;
-    width: 10em;
+    width: clamp(6em ,80%, 10em);
     font-size: 40px;
     font-weight: 100;
     margin: auto;
@@ -35,7 +35,6 @@ h2 {
     margin-top: 1em;
     font-size: 70px;
     font-weight: 500;
-    text-shadow: #343434;
 }
 
 h3 {
@@ -115,6 +114,26 @@ h1::before {
     width: 100%;
 }
 
+
+@media (max-width: 620px)
+{
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    #presentation,#lia {
+        font-size: 20px;
+    }
+
+    #socials {
+        margin-top: 6em;
+    } 
+
+}
 
 /* ---------------------------------------------
 -------------------------------------------------
@@ -306,7 +325,6 @@ Grid
     gap: 1em;
     min-height: 290px;
     width: 100%;
-    min-width: 480px;
 }
 
 #intro-container {
@@ -389,6 +407,20 @@ Grid
     }
 }
 
+@media (max-width: 600px) {
+    #skills ul {
+        grid-template: "a b c d" "e f g h" / 1fr 1fr 1fr 1fr;
+    }
+
+    .left, .right {
+        width: clamp(300px, 90%, 650px) !important;
+    }
+
+    #about-lia a {
+        margin: auto;
+    }
+}
+
 /* ---------------------------------------------
 -------------------------------------------
 ---------------------------------------------*/
@@ -431,6 +463,11 @@ Grid
     justify-content: center;
 }
 
+#work-title{ grid-area: a;}
+#edu-title{ grid-area: b;}
+#work-list{ grid-area: c;}
+#edu-list{ grid-area: d;}
+
 #resume ul {
     display: flex;
     flex-wrap: wrap;
@@ -469,8 +506,10 @@ Grid
 }
 
 @media (max-width: 620px) {
-    #resume {
+    #experience-container {
         width: 100%;
+    }
+    #resume {
         grid-template: "a" "c" "b" "d";
     }
 }
