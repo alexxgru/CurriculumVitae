@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: #1b1b1b;
+    background-color: #121212;
     font-family: 'PT Serif', serif;
     color: white;
 }
@@ -48,7 +48,12 @@ h3 {
 }
 
 h4 {
-
+    font-family: 'Roboto Slab', serif;
+    font-size: 18px;
+    padding-bottom: 3px;
+    width: 90%;
+    margin-bottom: 5px;
+    border-bottom: #34bfff 1px solid;
 }
 
 p {
@@ -115,7 +120,36 @@ h1::before {
 -------------------------------------------------
 ---------------------------------------------------*/
 
+#scroll-btn {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+#scroll-btn label img {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}
+
+
+#scroll-btn label {
+    animation: scroll-btn-animation 1s ease-in-out infinite alternate;
+    animation-fill-mode: forwards;
+}
+    @keyframes scroll-btn-animation {
+      from { transform: translateY(0); }
+      to { transform: translateY(-1em); }
+    }
+    
+#scroll-btn button {
+    visibility: hidden;
+    ;
+}
 
 
 #top {
@@ -212,7 +246,8 @@ Grid
     margin: 0 1em;
 }
 
-#introduction h2, #experience-container h2 {
+#introduction h2,
+#experience-container h2 {
     text-align: center;
     color: #34bfff;
     font-weight: 700;
@@ -227,22 +262,41 @@ Grid
     border-radius: 120px;
 }
 
-#about>section{
+#intro-container div:last-child {
+    flex: 1;
+}
+
+.left,.right {
     margin: auto;
-    background-color: #1b1b1b;
+    background-color: #1c1c1c;
     border-radius: 1em;
-    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+    box-shadow:
+        0px 1px 15px 5px rgba(2, 0, 0, 0.39);
     padding: 10px 20px;
     margin: auto;
+    opacity: 0;
+    transform: translateX(75px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.left {
+    transform: translateX(-75px);
+}
+
+.showing {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 #introduction {
-    width: 100%;
+    width: 80%;
     margin: auto;
     grid-area: a;
+    line-height: 1.5em;
 }
 
-#about p, #about li {
+#about p,
+#about li {
     font-size: 20px;
 }
 
@@ -263,8 +317,9 @@ Grid
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3em;
+    gap: 2em;
 }
+
 
 #skills ul {
     display: grid;
@@ -279,8 +334,9 @@ Grid
     width: 73px;
     height: 73px;
     margin: 0.5rem;
-    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
-    background-color: #212529;
+    box-shadow:
+        0px 1px 15px 5px rgba(2, 0, 0, 0.39);
+    background-color: #1c1c1c;
     border-radius: 10px;
 }
 
@@ -313,6 +369,8 @@ Grid
     margin-left: 4em;
     gap: 10px;
     padding-bottom: 1em;
+    color: white;
+    font-family: 'Roboto Slab', serif;
 }
 
 
@@ -323,10 +381,11 @@ Grid
 #experience h3 {
     width: 70%;
     margin: auto;
+    border: none;
 }
 
 #experience {
-    min-height: 100vh;
+    min-height: 110vh;
     background-image: url("./imgs/background2.jpg");
     background-size: cover;
     background-attachment: fixed;
@@ -340,12 +399,12 @@ Grid
     margin: 2em;
 }
 
-#experience-container{
+#experience-container {
     background-color: rgba(0, 0, 0, 0.05);
     box-shadow: 0 0 5px rgba(0, 0, 0, .15);
     backdrop-filter: blur(20px);
     width: clamp(800px, 80%, 100%);
-    height: 100vh;
+    height: 110vh;
     margin: auto;
     padding-top: 3em;
 }
@@ -363,7 +422,7 @@ Grid
     text-align: left;
     align-items: center;
     padding: 1em;
-    margin: 2em 0 0 2em;
+    margin: 0 0 0 2em;
     list-style-type: disc;
 }
 

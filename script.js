@@ -1,3 +1,17 @@
+let btn = document.querySelector('#scroll');
+const contentDivs = document.querySelectorAll('#about>section');
+
+btn.addEventListener('click', () => {
+  let height = window.innerHeight - window.scrollY;
+  window.scrollBy({
+    top: height,
+    left: 0,
+    behavior: 'smooth'
+  })
+})
+
+window.addEventListener('scroll', showBoxesInView);
+
 
 function animateBorder(element) {
     return new Promise(resolve => {
@@ -28,6 +42,22 @@ async function type(element, text , animate, delay) {
     })
   
 }
+
+function elementInView(element) {
+  const rect = element.getBoundingClientRect();
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+  return (rect.top <= windowHeight) && ((rect.top + rect.height) >= 0);
+}
+ 
+function showBoxesInView() {
+  for (let div of contentDivs) {
+    if (elementInView(div)) {
+      div.classList.add('showing');
+    }
+  }
+}
+
 
 async function runAnimation() {
     let response = await fetch("content.json");
