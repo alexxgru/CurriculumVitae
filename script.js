@@ -1,6 +1,8 @@
 let btn = document.querySelector('#scroll');
 const contentDivs = document.querySelectorAll('#about>section');
 
+
+
 btn.addEventListener('click', () => {
   let height = window.innerHeight - window.scrollY;
   window.scrollBy({
@@ -10,7 +12,11 @@ btn.addEventListener('click', () => {
   })
 })
 
+
+
 window.addEventListener('scroll', showBoxesInView);
+
+
 
 
 function animateBorder(element) {
@@ -19,6 +25,8 @@ function animateBorder(element) {
         setTimeout(resolve, 1000);
     })
 }
+
+
 
 async function type(element, text , animate, delay) {
     return new Promise(resolve => {
@@ -40,8 +48,10 @@ async function type(element, text , animate, delay) {
         }
         writeChar();
     })
-  
 }
+
+
+
 
 function elementInView(element) {
   const rect = element.getBoundingClientRect();
@@ -50,6 +60,8 @@ function elementInView(element) {
   return (rect.top <= windowHeight) && ((rect.top + rect.height) >= 0);
 }
  
+
+
 function showBoxesInView() {
   for (let div of contentDivs) {
     if (elementInView(div)) {
