@@ -153,8 +153,9 @@ h1::before {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center; 
+    width: 64px;
 }
-
 
 #scroll-btn img {
     animation: scroll-btn-animation 1s ease-in-out infinite alternate;
@@ -223,9 +224,13 @@ ul li img {
 
 
 @media (max-width: 620px) {
-    #scroll-btn img {
-        width: 70%;
+    #scroll-btn {
+        width: 48px;
     }
+    
+    #scroll-btn img{
+        width: 100%;
+    } 
 }
 
 /* --------------------------------------------- */
