@@ -177,6 +177,7 @@ h1::before {
 
 #top {
     height: 100vh;
+    background-color: #010204;
     background-image: url("./imgs/background2.jpg");
     background-size: cover;
     background-attachment: fixed;
@@ -233,6 +234,13 @@ ul li img {
 
     #scroll-btn img {
         width: 100%;
+    }
+
+    #top {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-attachment: fixed;
     }
 }
 
