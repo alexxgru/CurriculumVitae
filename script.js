@@ -18,7 +18,7 @@ window.addEventListener('scroll', showBoxesInView);
 
 
 
-
+//Animate bottom border landing page
 function animateBorder(element) {
     return new Promise(resolve => {
         element.classList.add("animate-border");
@@ -28,6 +28,7 @@ function animateBorder(element) {
 
 
 
+//Typing effect for landing page
 async function type(element, text , animate, delay) {
     return new Promise(resolve => {
         let i = 0;
