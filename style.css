@@ -176,7 +176,7 @@ h1::before {
 
 
 #top {
-    height: 100vh;
+    min-height: 100vh;
     background-color: #010204;
     background-image: url("./imgs/background2.jpg");
     background-size: cover;
@@ -237,6 +237,7 @@ ul li img {
     }
 
     #top {
+        background-image: url("./imgs/backgroundmobile.jpg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: bottom;
@@ -430,6 +431,10 @@ Grid
     #about {
         padding: 0;
         padding-bottom: 3em;
+    }
+
+    #about section> p {
+        margin-left: 1em;
     }
 
     .left,
