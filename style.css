@@ -147,7 +147,7 @@ h1::before {
 
 #scroll-btn {
     position: absolute;
-    bottom: 0;
+    bottom: 1em;
     right: 50%;
     transform: translateX(50%);
     display: flex;
@@ -155,14 +155,8 @@ h1::before {
     align-items: center;
 }
 
-#scroll-btn label img {
-    width: 100%;
-    height: 100%;
-    opacity: 1;
-}
 
-
-#scroll-btn label {
+#scroll-btn img {
     animation: scroll-btn-animation 1s ease-in-out infinite alternate;
     animation-fill-mode: forwards;
 }
@@ -227,6 +221,12 @@ ul li img {
     opacity: 1.0 !important;
 }
 
+
+@media (max-width: 620px) {
+    #scroll-btn img {
+        width: 70%;
+    }
+}
 
 /* --------------------------------------------- */
 
