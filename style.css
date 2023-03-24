@@ -305,7 +305,7 @@ Grid
     border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
     -webkit-animation: morph 8s ease-in-out infinite;
     animation: morph 8s ease-in-out infinite;
-    border: 3px solid #333333;
+    border: 3px solid black;
     border-radius: 120px;
     background-size: cover;
 }
@@ -416,9 +416,16 @@ Grid
     text-align: center;
     text-decoration: none;
     color: white;
-    padding: 1em;
+    padding: 0.8em;
+    border-radius: 0.5em;
     background-color: #1c1e22;
+    border: 1px solid transparent;
     width: 8em;
+    transition: border-color 150ms ease;
+}
+
+#about-lia a:hover {
+    border-color: #34bfff;
 }
 
 
