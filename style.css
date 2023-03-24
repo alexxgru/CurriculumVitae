@@ -154,6 +154,10 @@ h1::before {
     width: 64px;
 }
 
+#scroll-btn:hover {
+    cursor: pointer;
+}
+
 #scroll-btn img {
     animation: scroll-btn-animation 1s ease-in-out infinite alternate;
     animation-fill-mode: forwards;
