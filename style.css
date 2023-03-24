@@ -27,6 +27,7 @@ h1 {
     font-weight: 100;
     margin: auto;
     padding-bottom: 10px;
+    font-family: 'Roboto slab', serif;
     position: relative;
     display: inline-block;
 }
