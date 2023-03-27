@@ -310,7 +310,7 @@ Grid
     border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
     -webkit-animation: morph 8s ease-in-out infinite;
     animation: morph 8s ease-in-out infinite;
-    border: 3px solid black;
+    border: 3px solid #eaeaea;
     border-radius: 120px;
     background-size: cover;
 }
